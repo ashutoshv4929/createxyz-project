@@ -1,18 +1,12 @@
-const withPWA = require('@ducanh2912/next-pwa');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     esmExternals: 'loose'
   },
   webpack: (config) => {
-    config.externals = [...config.externals, { canvas: "canvas" }];
+    config.externals = [...config.externals, { canvas: "canvas" }]; // required to make pdfjs work
     return config;
   },
 };
 
-module.exports = withPWA({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-})(nextConfig);
+module.exports = nextConfig;
