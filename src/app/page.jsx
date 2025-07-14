@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 
-import { useUpload } from "../utilities/runtime-helpers";
+// --- यही लाइन ठीक की गई है ---
+import { useUpload } from "./utilities/runtime-helpers";
 
 function MainComponent() {
   const [activeCategory, setActiveCategory] = React.useState("pdf");
@@ -1078,19 +1079,39 @@ function MainComponent() {
 
       <style jsx global>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
         }
 
         @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
         }
 
         @keyframes bounce {
-          0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-          40% { transform: translateY(-10px); }
-          60% { transform: translateY(-5px); }
+          0%,
+          20%,
+          50%,
+          80%,
+          100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-10px);
+          }
+          60% {
+            transform: translateY(-5px);
+          }
         }
 
         @keyframes fadeInUp {
@@ -1116,18 +1137,32 @@ function MainComponent() {
         }
 
         @keyframes rotate {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
         }
 
         @keyframes scale {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.1); }
+          0%,
+          100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
         }
 
         @keyframes glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
-          50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
+          0%,
+          100% {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+          }
         }
 
         .floating-shapes {
@@ -1139,7 +1174,11 @@ function MainComponent() {
 
         .shape {
           position: absolute;
-          background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(219, 39, 119, 0.1));
+          background: linear-gradient(
+            45deg,
+            rgba(139, 92, 246, 0.1),
+            rgba(219, 39, 119, 0.1)
+          );
           border-radius: 50%;
           animation: float 6s ease-in-out infinite;
         }
@@ -1316,7 +1355,7 @@ function MainComponent() {
             width: 40px !important;
             height: 40px !important;
           }
-          
+
           .floating-shapes {
             opacity: 0.5;
           }
