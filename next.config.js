@@ -6,15 +6,13 @@ const nextConfig = {
     esmExternals: 'loose'
   },
   webpack: (config) => {
-    config.externals = [...config.externals, { canvas: "canvas" }]; // required to make pdfjs work
+    config.externals = [...config.externals, { canvas: "canvas" }];
     return config;
   },
 };
 
-const pwaConfig = withPWA({
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-});
-
-module.exports = pwaConfig(nextConfig);
+module.exports = withPWA({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+})(nextConfig);
