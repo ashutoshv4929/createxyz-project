@@ -1,9 +1,3 @@
-const withPWA = require('@ducanh2912/next-pwa')({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-});
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -15,4 +9,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPWA(nextConfig);
+module.exports = nextConfig;
